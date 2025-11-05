@@ -5,6 +5,10 @@
 }
 
 .footer__content{
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 400;
+    color: #212121B2;
 text-align: center;
 margin: 60px 0;
 }

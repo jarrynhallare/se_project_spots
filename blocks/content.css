@@ -1,12 +1,11 @@
 .content{
     padding: 0 20px 40px;
-    margin: 0 80px;
     border-bottom: 1px rgba(33, 33, 33, 0.4) solid;
 }
 
 @media screen and (max-width: 627px){
     .content{
-        padding-bottom: 20px;
+        padding: 0 16px 20px;
         margin: 0;
     }
 }
