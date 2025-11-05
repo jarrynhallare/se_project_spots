@@ -23,6 +23,7 @@ Good luck and have fun!
 ## GitHub URL
 
 GitHub Page's URL
+https://jarrynhallare.github.io/se_project_spots/
 
 ## Project Pitch Video
 
