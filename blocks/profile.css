@@ -7,7 +7,7 @@ border-bottom: 1px rgba(33, 33, 33, .4) solid;
 .profile__post-button {
 display: flex;
 margin-left: auto;
-width: 149px;
+width: 157px;
 height: 52px;
 border-radius: 8px;
 border-style: none;
@@ -25,7 +25,8 @@ padding: 0;
 }
 
 .profile__plus-icon{
-size: 12px;
+width: 12px;
+height: 12px;
 }
 
 .profile__post-button:hover{
@@ -68,6 +69,7 @@ size: 12px;
     margin: 0 0 12px;
     font-size: 32px;
     font-weight: 500;
+    line-height: 1;
  display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -80,6 +82,8 @@ size: 12px;
     margin: 0;
     color: rgba(33, 33, 33, 0.7);
     font-weight: 500;
+    font-size: 16px;
+    line-height: 1;
  display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;
