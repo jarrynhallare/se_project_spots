@@ -8,11 +8,19 @@
     left: 0;
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
+    opacity: 0;
+  transform: scale(0.95);
+  transition: 
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    visibility 0.3s; 
 }
 
 .modal_is-opened {
     visibility: visible;
+    opacity: 1;
+  transform: scale(1);
 }
 
 .modal__container {
@@ -47,7 +55,7 @@
     flex-direction: column;
 }
 
-.modal__label {
+.profile__name-input {
     margin: 0 0 32px;
     font-size: 16px;
     font-weight: 500;
@@ -58,6 +66,18 @@
     box-sizing: border-box;
 }
 
+.profile__description-input {
+    margin: 0 0 32px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #212121B2;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+
 .modal__input {
     display: block;
     margin: 8px 0 0;
@@ -65,7 +85,7 @@
     padding: 16px 12px;
     border: 1px solid;
     border-radius: 8px;
-    color: #21212166;
+    color: #212121;
     font-size: 20px;
     font-weight: 500;
       display: block;
@@ -75,7 +95,7 @@
 }
 
 .modal__input::placeholder {
-    color: #2121214D;
+    color: #212121;
 }
 
 .modal__submit-btn {

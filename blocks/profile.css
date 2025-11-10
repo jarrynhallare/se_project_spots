@@ -46,7 +46,7 @@ size: 12px;
 }
 
 .profile__edit-btn{
-    margin-top: 18px;
+    margin:auto auto 0 0;
     border: none;
     background-color: transparent;
     opacity: .7;
