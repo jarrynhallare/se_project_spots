@@ -135,7 +135,6 @@ visibility: visible;
     }
     .modal__label{
         font-size: 16px;
-        margin-bottom: 24px;
     }
     .modal__container{
         max-width:none;
