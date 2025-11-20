@@ -14,6 +14,10 @@
     transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0.3s;
 }
 
+.modal__type_preview{
+    padding: 0 16px;
+}
+
 .modal_is-opened {
 visibility: visible;
     opacity: 1;
@@ -41,6 +45,19 @@ visibility: visible;
     border-style: none;
     background-color: transparent;
     padding: 0;
+}
+
+.modal__close-btn_type_preview{
+    background-image: url(../images/close-preview.svg);
+    top: 0;
+    right: -52.5px;
+    border-style: none;
+    width: 40px;
+    height: 40px;
+}
+
+.modal__close-btn_type_preview:hover{
+    opacity: .4;
 }
 
 .modal__close-btn:hover{
@@ -118,6 +135,29 @@ visibility: visible;
     opacity: 80%;
 }
 
+.modal__image-container{
+position: relative;
+}
+
+.modal__image{
+    display: block;
+    object-fit: contain;
+    max-width: 80vh;
+    max-height: 80vh;
+    width: 100%;
+    border-radius: 8px;
+    
+}
+
+.modal__caption{
+    color: #fff;
+    background: #212121;
+    border-radius: 4px 8px;
+    padding: 8px;
+    width: max-content;
+}
+
+
 @media screen and (max-width: 627px){
     .modal__submit-btn{
         align-items: center;
@@ -149,5 +189,15 @@ visibility: visible;
     }
     .modal{
         padding: 0 20px;
+    }
+    
+    .modal__image{
+        max-width: unset;
+        
+    }
+
+    .modal__close-btn_type_preview{
+        top: -40px;
+        right: 0;
     }
 }
