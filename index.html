@@ -54,10 +54,10 @@
                 <h2 class="modal__title">Edit Profile</h2>
                 <form class="modal__form" name="editProfileForm">
                     <label for="profile-name-input" class="modal__label"> Name
-                        <input id="profile-name-input" type="text" class="modal__input" placeholder="Type your name">
+                        <input id="profile-name-input" type="text" class="modal__input" placeholder="Type your name" required>
                     </label>
                     <label for="profile-description-input" class="modal__label"> Description
-                        <input id="profile-description-input" type="text" class="modal__input" placeholder="Decribe yourself">
+                        <input id="profile-description-input" type="text" class="modal__input" placeholder="Decribe yourself" required>
                     </label>
                     <button class="modal__submit-btn" type="submit">Save</button>
                 </form>
@@ -71,18 +71,19 @@
                 <h2 class="modal__title">New Post</h2>
                 <form class="modal__form">
                     <label for="card-image-input" class="modal__label"> Image link
-                        <input id="card-image-input" class="modal__input" type="url" placeholder="Paste a link to the picture">
+                        <input id="card-image-input" class="modal__input" type="url" placeholder="Paste a link to the picture" required>
                     </label>
                     <label for="card-caption-input" class="modal__label"> Caption
-                        <input id="card-caption-input" type="text" class="modal__input" placeholder="Type your caption">
+                        <input id="card-caption-input" type="text" class="modal__input" placeholder="Type your caption" required>
                     </label>
+                    <span id="add-card-error" style="color: red; display: none;"></span>
                     <button class="modal__submit-btn" type="submit">Save</button>
                 </form>
 
             </div>
 
         </div>
-         <div class="modal modal__type_preview" id="preview-modal">
+         <div class="modal modal_type_preview" id="preview-modal">
             <div class="modal__image-container">
                 <button class="modal__close-btn modal__close-btn_type_preview" type="button"></button>
                 <img src="#" alt="" class="modal__image">

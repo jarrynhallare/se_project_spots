@@ -96,15 +96,26 @@ newPostCloseBtn.addEventListener("click", () => {
 function handleAddCardSubmit(evt) {
     evt.preventDefault();
     const inputValues = {
-        name: nameInput.value,
-        link: linkInput.value,
+        name: nameInput.value.trim(),
+        link: linkInput.value.trim(),
     };
-    const cardElement = getCardElement(inputValues);
-    cardsList.prepend(cardElement);
 
-    addCardFormElement.reset();
-    closeModal(newPostModal);
+    const errorMsgEl = document.getElementById('add-card-error');
+
+    if (inputValues.name !== "" && linkInput.validity.valid) {
+        const cardElement = getCardElement(inputValues);
+        cardsList.prepend(cardElement);
+        addCardFormElement.reset();
+        closeModal(newPostModal);
+
+        errorMsgEl.style.display = 'none';
+        errorMsgEl.textContent = '';
+    } else {
+        errorMsgEl.textContent = "Please enter a caption and a valid image link.";
+        errorMsgEl.style.display = "block";
+    }
 }
+    
 
 const cardTemplate = document.querySelector("#card-template").content.querySelector(".card");
 const cardsList = document.querySelector(".cards__list");

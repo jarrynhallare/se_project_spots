@@ -59,7 +59,7 @@ height: 12px;
 }
 
 .profile__edit-btn:hover{
-   opacity: 100%;
+   opacity: 1;
    cursor: pointer;
 }
 
