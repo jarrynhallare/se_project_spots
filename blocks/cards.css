@@ -1,22 +1,22 @@
-.cards{
-padding-top: 20px;
-justify-content: center;
+.cards {
+  padding-top: 20px;
+  justify-content: center;
 }
 
-.cards__list{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    justify-content: center;
-grid-template-columns: repeat(auto-fit, 413px);
-gap: 40px 20px;
+.cards__list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, 413px);
+  gap: 40px 20px;
 }
 
-@media screen and (max-width: 627px){
-.cards__list{
+@media screen and (max-width: 627px) {
+  .cards__list {
     grid-template-columns: 288px;
     justify-content: center;
     gap: 20px;
-}
+  }
 }
