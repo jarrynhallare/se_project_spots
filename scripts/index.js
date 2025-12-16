@@ -47,18 +47,41 @@ const previewImageEl = previewModal.querySelector(".modal__image");
 const modalCaptionEl = previewModal.querySelector(".modal__caption");
 
 
+function handleEscKey(e) {
+  if (e.key === 'Escape' || e.key === 'Esc' || e.keyCode === 27) {
+    const openModalEl = document.querySelector('.modal_is-opened');
+    if (openModalEl) {
+      closeModal(openModalEl);
+    }
+  }
+}
 
 function openModal(modal) {
-    modal.classList.add("modal_is-opened");
+  modal.classList.add('modal_is-opened');
+  document.body.style.overflow = 'hidden';
+  document.addEventListener('keydown', handleEscKey);
 }
+
 function closeModal(modal) {
-    modal.classList.remove("modal_is-opened");
+  modal.classList.remove('modal_is-opened');
+  document.body.style.overflow = '';
+  document.removeEventListener('keydown', handleEscKey);
+}
+
+function enableOverlayClose(modal) {
+  modal.addEventListener('click', function (e) {
+    if (e.target === e.currentTarget) {
+      closeModal(e.currentTarget);
+    }
+  });
 }
 
 editProfileButton.addEventListener("click", () => {
     editProfileNameInput.value = profileNameEl.textContent;
     editProfileDescriptionInput.value = profileDescriptionEl.textContent;
     openModal(editProfileModal);
+
+    
 });
 editCloseBtn.addEventListener("click", () => {
     closeModal(editProfileModal);
@@ -79,11 +102,15 @@ editProfileForm.addEventListener("submit", handleEditProfileSubmit);
 const newPostButton = document.querySelector(".profile__post-button");
 const newPostModal = document.querySelector("#new-post-modal");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
-
+const cardSubmitBtn = newPostModal.querySelector(".modal__button");
 const addCardFormElement = newPostModal.querySelector(".modal__form");
 
 const linkInput = addCardFormElement.querySelector("#card-image-input");   
 const nameInput = addCardFormElement.querySelector("#card-caption-input");
+
+enableOverlayClose(editProfileModal);
+enableOverlayClose(newPostModal);
+enableOverlayClose(previewModal);
 
 newPostButton.addEventListener("click", () => {
     openModal(newPostModal);
@@ -106,6 +133,7 @@ function handleAddCardSubmit(evt) {
         const cardElement = getCardElement(inputValues);
         cardsList.prepend(cardElement);
         addCardFormElement.reset();
+        disableButton(cardSubmitBtn, settings);
         closeModal(newPostModal);
 
         errorMsgEl.style.display = 'none';
