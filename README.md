@@ -25,4 +25,4 @@ https://jarrynhallare.github.io/se_project_spots/
 
 ## Project Pitch Video
 
-Check out https://drive.google.com/file/d/1IjKI91OAr0XqA9F_j37EsErDWOK7nT_Z/view?usp=sharing , where I describe my project and some challenges I faced while building it.
+Check out my updated video https://www.loom.com/share/bd42425ad3494254b298343455169803 , where I describe my project and some challenges I faced while building it.
