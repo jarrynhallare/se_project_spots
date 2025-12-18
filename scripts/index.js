@@ -102,7 +102,7 @@ editProfileForm.addEventListener("submit", handleEditProfileSubmit);
 const newPostButton = document.querySelector(".profile__post-button");
 const newPostModal = document.querySelector("#new-post-modal");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
-const cardSubmitBtn = newPostModal.querySelector(".modal__button");
+const cardSubmitBtn = newPostModal.querySelector(settings.submitButtonSelector);
 const addCardFormElement = newPostModal.querySelector(".modal__form");
 
 const linkInput = addCardFormElement.querySelector("#card-image-input");   
@@ -127,20 +127,12 @@ function handleAddCardSubmit(evt) {
         link: linkInput.value.trim(),
     };
 
-    const errorMsgEl = document.getElementById('add-card-error');
-
     if (inputValues.name !== "" && linkInput.validity.valid) {
         const cardElement = getCardElement(inputValues);
         cardsList.prepend(cardElement);
         addCardFormElement.reset();
         disableButton(cardSubmitBtn, settings);
         closeModal(newPostModal);
-
-        errorMsgEl.style.display = 'none';
-        errorMsgEl.textContent = '';
-    } else {
-        errorMsgEl.textContent = "Please enter a caption and a valid image link.";
-        errorMsgEl.style.display = "block";
     }
 }
     
