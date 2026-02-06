@@ -166,6 +166,72 @@ visibility: visible;
   opacity: 0.6;
 }
 
+#avatar-modal .modal__title {
+ font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 32px;
+}
+
+#avatar-modal .modal__label {
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+#avatar-modal .modal__submit-btn {
+  background-color: #212121;
+  color: #fcf5e5;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+#delete-confirm-modal .modal__form {
+  display:flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+#delete-confirm-modal .modal__close-btn {
+  background-image: url(../images/close-preview.svg);
+  top: 0;
+  right: -52.5px;
+  border-style: none;
+  width: 40px;
+  height: 40px;
+  opacity: 1;
+}
+
+#delete-confirm-modal .modal__title {
+  text-align: center;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+}
+
+
+.modal__submit-btn_type_delete {
+  background-color: #FF3333;
+  color: black;
+}
+
+.modal__submit-btn_type_delete:hover {
+  background-color: #FF6565;
+}
+
+.modal__submit-btn_type_cancel {
+  background-color: transparent;
+  color: #212121;
+  border: 1px solid;;
+}
+.modal__submit-btn_type_cancel:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
 
 .modal__image-container {
   position: relative;
