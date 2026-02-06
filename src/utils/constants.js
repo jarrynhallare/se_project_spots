@@ -1,4 +1,4 @@
-// API configuration
+
 export const API_CONFIG = {
   baseUrl: "https://around-api.en.tripleten-services.com/v1",
   headers: {
@@ -7,7 +7,7 @@ export const API_CONFIG = {
   },
 };
 
-// Selectors
+
 export const SELECTORS = {
   cardsList: ".cards__list",
   cardTemplate: "#card-template",
@@ -16,7 +16,7 @@ export const SELECTORS = {
   profileAvatar: ".profile__avatar",
 };
 
-// Modal selectors
+
 export const MODALS = {
   editProfile: "#edit-profile-modal",
   newPost: "#new-post-modal",
@@ -25,13 +25,13 @@ export const MODALS = {
   deleteConfirm: "#delete-confirm-modal",
 };
 
-// Button text states
+
 export const BUTTON_TEXT = {
   saving: "Saving...",
   deleting: "Deleting...",
 };
 
-// Validation configuration
+
 export const VALIDATION_SETTINGS = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",

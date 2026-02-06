@@ -54,7 +54,7 @@ function _isCardLikedByUser(cardData, userId) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // DOM queries (guarded)
+
   const editProfileButton = document.querySelector(".profile__edit-btn");
   const editProfileModal = document.querySelector("#edit-profile-modal");
   const editCloseBtn = editProfileModal && editProfileModal.querySelector(".modal__close-btn");
@@ -90,20 +90,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const avatarInput = avatarModal && avatarModal.querySelector("#profile-avatar-input");
   const avatarModalBtn = document.querySelector(".profile__avatar-btn");
 
-  // Optional delete-confirm modal selectors (if you added that modal)
+ 
   const deleteConfirmModal = document.querySelector("#delete-confirm-modal");
   const deleteConfirmForm = document.querySelector("#delete-confirm-form");
   const deleteConfirmCloseBtn = deleteConfirmModal && deleteConfirmModal.querySelector(".modal__close-btn");
   const deleteConfirmSubmitBtn = deleteConfirmForm && deleteConfirmForm.querySelector(".modal__submit-btn");
 
-  // Enable overlay close for modals that exist
+ 
   [editProfileModal, newPostModal, previewModal, avatarModal, deleteConfirmModal].forEach(enableOverlayClose);
 
-  // Avatar button
+ 
   if (avatarModalBtn) avatarModalBtn.addEventListener("click", () => openModal(avatarModal));
   if (avatarModalCloseBtn) avatarModalCloseBtn.addEventListener("click", () => closeModal(avatarModal));
 
-  // Avatar form
+  
   if (avatarForm) {
     avatarForm.addEventListener("submit", (evt) => {
       evt.preventDefault();
@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Open/close edit profile modal
+ 
   if (editProfileButton) {
     editProfileButton.addEventListener("click", () => {
       if (editProfileNameInput) editProfileNameInput.value = profileNameEl ? profileNameEl.textContent : "";
@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (newPostButton) newPostButton.addEventListener("click", () => openModal(newPostModal));
   if (newPostCloseBtn) newPostCloseBtn.addEventListener("click", () => closeModal(newPostModal));
 
-  // Edit profile submit
+  
   if (editProfileForm) {
     editProfileForm.addEventListener("submit", (evt) => {
       evt.preventDefault();
@@ -169,7 +169,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Add card submit
+  
   if (addCardFormElement) {
     addCardFormElement.addEventListener("submit", (evt) => {
       evt.preventDefault();
@@ -193,7 +193,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Delete confirmation modal handlers (if present)
+  
   let selectedCardElement = null;
   let selectedCardId = null;
 
@@ -232,7 +232,7 @@ cancelDeleteBtn.addEventListener('click', () => {
 });
 
 
-  // Card creation
+  
   function getCardElement(cardData) {
     const cardElement = cardTemplate.cloneNode(true);
     const cardTitleEl = cardElement.querySelector(".card__title");
@@ -257,7 +257,7 @@ cancelDeleteBtn.addEventListener('click', () => {
 
     if (cardTitleEl) cardTitleEl.textContent = cardData.name;
 
-    // Ownership handling
+    
     const ownerId = _getOwnerId(cardData.owner);
     const isOwner = ownerId && currentUserId && ownerId === currentUserId;
     if (cardDeleteBtnEl) cardDeleteBtnEl.style.display = isOwner ? "" : "none";
@@ -284,7 +284,7 @@ cancelDeleteBtn.addEventListener('click', () => {
     return cardElement;
   }
 
-  // Initialize: load user + cards
+  
   api.getAppInfo()
     .then(([userData, cards]) => {
       currentUserId = userData._id;
@@ -304,6 +304,6 @@ cancelDeleteBtn.addEventListener('click', () => {
     })
     .catch((err) => console.error("App init failed:", err));
 
-  // Enable form validation (your existing module)
+  
   enableValidation(settings);
 });
