@@ -22,11 +22,15 @@
       </header>
       <main class="content">
         <section class="profile page__section">
+          <div class="profile__avatar-container">
+          <button class="profile__avatar-btn">
+            <img src="images/pencil-light.svg" alt="Pencil Icon" class="profile__pencil-icon" /></button>
           <img
             src="images/avatar.jpg"
             alt="profile avatar"
             class="profile__avatar"
           />
+          </div>
           <div class="profile__column">
             <h1 class="profile__name">Bessie Coleman</h1>
             <p class="profile__description">Civil Aviator</p>
@@ -137,6 +141,41 @@
           ></button>
           <img src="#" alt="" class="modal__image" />
           <p class="modal__caption"></p>
+        </div>
+      </div>
+    </div>
+  <div class="modal" id="avatar-modal">
+        <div class="modal__container">
+          <button class="modal__close-btn" type="button"></button>
+          <h2 class="modal__title">Edit profile avatar</h2>
+          <form class="modal__form" id="edit-avatar-form">
+            <label for="profile-avatar-input" class="modal__label">
+              Profile Picture
+              <input
+                id="profile-avatar-input"
+                class="modal__input"
+                placeholder="Paste the link to an image"
+                name="Profile Picture"
+                type="url"
+                required
+              />
+              <span id="profile-avatar-input-error" class="modal__error"></span>
+            </label>
+            <button class="modal__submit-btn" type="submit">Save</button>
+          </form>
+        </div>
+      </div>
+      <div class="modal" id="delete-confirm-modal">
+        <div class="modal__container">
+          <button class="modal__close-btn" type="button"></button>
+          <h2 class="modal__title">Are you sure you want to delete this image?</h2>
+          <form class="modal__form" id="delete-confirm-form">
+            <button class="modal__submit-btn modal__submit-btn_type_delete" type="submit">
+              Delete
+            </button>
+            <button class="modal__submit-btn modal__submit-btn_type_cancel" type="button">
+              Cancel</button>
+          </form>
         </div>
       </div>
     </div>
